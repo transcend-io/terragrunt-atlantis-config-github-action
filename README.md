@@ -14,9 +14,11 @@ Github action to ensure terragrunt-atlantis-config has been run, making sure tha
 
 ## Example Usage
 
+```yaml
 uses: actions/terragrunt-atlantis-config@v1
 with:
   version: 'v0.4.0'
   extra_args: '--autoplan'
   who-to-greet: 'Mona the Octocat'
+```
 
