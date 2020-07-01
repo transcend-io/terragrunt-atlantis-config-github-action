@@ -1,7 +1,8 @@
 name: 'terragrunt-atlantis-config'
 description: 'Checks if the atlantis.yaml file is up to date'
-icon: file-text
-color: blue
+branding:
+  icon: file-text
+  color: blue
 inputs:
   version:
     description: 'Revision of terragrunt-atlantis-config to use'
