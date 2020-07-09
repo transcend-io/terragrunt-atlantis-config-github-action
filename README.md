@@ -14,11 +14,16 @@ Github action to ensure terragrunt-atlantis-config has been run, making sure tha
 
 ## Example Usage
 
-Here is an example that uses v0.4.3 of terragrunt-atlantis-config, passing args to enable autoplanning but to disable parallelization
+Here is an example that uses v0.5.0 of terragrunt-atlantis-config, passing args to enable autoplanning but to disable parallelization
 
 ```yaml
 name: terragrunt-atlantis-config
-on: [push]
+on:
+  push:
+    paths:
+    - '**.hcl'
+    - '**.tf'
+    - '**.hcl.json'
 
 jobs:
   terragrunt_atlantis_config:
@@ -30,7 +35,8 @@ jobs:
         id: atlantis_validator
         uses: transcend-io/terragrunt-atlantis-config-github-action@v0.0.3
         with:
-          version: v0.4.3
+          version: v0.5.0
           extra_args: '--autoplan --parallel=false
 ```
 
+If you want to save money on billable minutes, you could update to run on pull requests instead of each push
